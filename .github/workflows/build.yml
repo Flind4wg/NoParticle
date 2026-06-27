@@ -1,4 +1,4 @@
-name: Build Particle Reducer Native ARM64
+name: Build NoParticle Native ARM64
 
 on:
   push:
@@ -23,7 +23,7 @@ jobs:
         -shared \
         -fPIC \
         -O2 \
-        -o ParticleReducer.so \
+        -o NoParticle.so \
         main.cpp \
         -llog -landroid -ldl
 
@@ -31,5 +31,4 @@ jobs:
       uses: actions/upload-artifact@v4
       with:
         name: NoParticle
-        path: libnoparticle.so
-
+        path: NoParticle.so
